@@ -1,14 +1,14 @@
 {  
-   u'game':u'mysterious-scolding',
-   u'snakes':[  
+   "game":"mysterious-scolding",
+   "snakes":[  
       {  
-         u'kills':0,
-         u'status':u'alive',
-         u'taunt':u'',
-         u'id':u'ee925ec8-01f4-4f08-a05d-617a97cad866',
-         u'message':u'',
-         u'name':u'Adder Lovelace',
-         u'coords':[  
+         "kills":0,
+         "status":"alive",
+         "taunt":"",
+         "id":"ee925ec8-01f4-4f08-a05d-617a97cad866",
+         "message":"",
+         "name":"Adder Lovelace",
+         "coords":[  
             [  
                16,
                3
@@ -22,17 +22,17 @@
                3
             ]
          ],
-         u'age':3,
-         u'health':97
+         "age":3,
+         "health":97
       },
       {  
-         u'kills':0,
-         u'status':u'alive',
-         u'taunt':u'Tauting alll the shit',
-         u'id':u'9a6b2c23-9485-4d7b-b459-d0a8689e10d8',
-         u'message':u'',
-         u'name':u'Wubalubadubdub',
-         u'coords':[  
+         "kills":0,
+         "status":"alive",
+         "taunt":"Tauting alll the shit",
+         "id":"9a6b2c23-9485-4d7b-b459-d0a8689e10d8",
+         "message":"",
+         "name":"Wubalubadubdub",
+         "coords":[  
             [  
                16,
                13
@@ -46,11 +46,11 @@
                13
             ]
          ],
-         u'age':3,
-         u'health':97
+         "age":3,
+         "health":97
       }
    ],
-   u'food':[  
+   "food":[  
       [  
          8,
          8
@@ -60,9 +60,8 @@
          1
       ]
    ],
-   u'height':17,
-   u'width':17,
-   u'mode':u'classic',
-   'our-snake-id':'9a6b2c23-9485-4d7b-b459-d0a8689e10d8',
-   u'turn':3
+   "height":17,
+   "width":17,
+   "mode":"classic",
+   "turn":3
 }
