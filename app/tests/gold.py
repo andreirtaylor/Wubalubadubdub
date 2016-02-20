@@ -56,4 +56,4 @@ def run(data, direction):
     print "new distance to closest gold:", num_moves_new_closest
 
     if(num_moves_new_closest >= num_moves_closest): return 0
-    if(num_moves_new_closest < num_moves_closest): return 1
+    return 1
