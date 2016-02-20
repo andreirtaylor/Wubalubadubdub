@@ -1,4 +1,5 @@
 import os
+import random as _random
 import tests
 
 # Might be useful to print out the current weights and tests
@@ -24,7 +25,17 @@ def get_move(data):
     return max(moves, key=moves.get)
 
 def taunt(data):
-    return "Tauting alll the shit"
+    taunts = [
+                  "Oh man oh geese Rick!",
+                  "WUBBA LUBBA DUB DUBS!!!",
+                  "Yo! What's up my glip glops?",
+                  "I'm tiny Rick!",
+                  "Time to get schwifty in here",
+                  "Can you assimilate a giraffe?",
+                  "It's time to get your beak wet tonight playa!"
+             ]
+
+    return taunts[int(_random.random() * len(taunts))]
 
 def head(bottle):
     return '%s://%s/static/head.png' % (
@@ -34,4 +45,3 @@ def head(bottle):
 
 def color():
     return "#1447D4"
-
