@@ -9,7 +9,7 @@ def run(data, direction):
 
     for x in data["snakes"]:
         if x["id"] == "9a6b2c23-9485-4d7b-b459-d0a8689e10d8":
-            my_head = x["coords"][0]
+            my_head = x["coords"][0][:]
 
     #my_head = [x for x in data["snakes"] if x["id"] == data["our_snake_id"]][0]["coords"][0]
 
