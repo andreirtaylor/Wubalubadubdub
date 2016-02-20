@@ -21,9 +21,6 @@ def run(data, direction):
     
 
 def calculateMoves(head,point,height,width):
-	# xDist = abs(head[0] - point[0])
-	# yDist = abs(head[1] - point[0])
-	# return xDist + yDist
     return abs(head[0] - point[0]) + abs(head[1] - point[1])
 
 def foodInDirectionOfHead(head,point, direction):
