@@ -29,6 +29,7 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
+    data["our-snake-id"] = "9a6b2c23-9485-4d7b-b459-d0a8689e10d8"
 
     # TODO: Do things with data
 
