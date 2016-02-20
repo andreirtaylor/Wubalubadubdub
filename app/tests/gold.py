@@ -6,14 +6,11 @@ def run(data, direction):
     # setup gold holder
     gold = []
 
-
     my_head = []
 
     for x in data["snakes"]:
         if x["id"] == "9a6b2c23-9485-4d7b-b459-d0a8689e10d8":
             my_head = x["coords"][0][:]
-
-    #my_head = [x for x in data["snakes"] if x["id"] == data["our_snake_id"]][0]["coords"][0]
 
     print(my_head)
     
@@ -22,9 +19,15 @@ def run(data, direction):
         x_moves = abs(my_head[0] - i[0])
         y_moves = abs(my_head[1] - i[1])
         moves = x_moves + y_moves
+        print "old gold location:", i
+        print "old num moves:", moves
         gold.append(moves)
 
+
     closest_gold = data["gold"][gold.index(min(gold))]
+    print "closest_gold:",closest_gold 
+    num_moves_closest = abs(my_head[0] - closest_gold[0]) + abs(my_head[1] - closest_gold[1])
+    print "num moves for closest:", num_moves_closest
     
     #check which direction has been passed in and move our head
     if(direction == "north"):
@@ -44,17 +47,17 @@ def run(data, direction):
         x_moves = abs(my_head[0] - i[0])
         y_moves = abs(my_head[1] - i[1])
         moves = x_moves + y_moves
+        print "new gold location:", i
+        print "old num moves:", moves
         new_gold.append(moves)
     
     #find the new gold coin from potential position
     new_closest_gold = data["gold"][new_gold.index(min(new_gold))]
 
     #now we have the closest gold coords and the new closest gold coords
-    num_moves_closest = abs(my_head[0] - closest_gold[0]) + abs(my_head[1] - closest_gold[1])
 
     num_moves_new_closest = abs(my_head[0] - new_closest_gold[0]) + abs(my_head[1] - new_closest_gold[1])
 
-    print "old closest gold:", num_moves_closest
     print "new closest gold:", num_moves_new_closest
 
     if(num_moves_new_closest > num_moves_closest): return 0.5
