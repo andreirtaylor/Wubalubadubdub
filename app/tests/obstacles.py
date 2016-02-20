@@ -5,6 +5,19 @@ WEIGHT  = 1
 
 def run(data, direction):
     print data
-    head = [x for x in data["snakes"] if x["id"] == data["our-snake-id"]][0]
-    if head[]
-        
+    head = [x for x in data["snakes"] if x["id"] == data["our-snake-id"]][0]["coords"][0]
+    if direction == "north":
+        head[1] -= 1
+
+    if direction == "south":
+        head[1] += 1
+
+    if direction == "west":
+        head[0] -= 1
+
+    if direction == "east":
+        head[0] += 1
+
+    print "\n head "
+    print head
+    print "\n"
