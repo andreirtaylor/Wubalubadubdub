@@ -1,9 +1,7 @@
-WEIGHT  = 1
+WEIGHT  = 10
 
-# Returns a positive integer that will be multipled by weight and and the current score
+# Returns a positive floating point between 0 and 1 that will be multipled by weight and and the current score
 # Return None if you do not want the snake to go in this direction
 def run(data, direction):
-    print direction
-    moves = {"north": 1, "south": 20, "east": 3, "west": 4}
-    print moves[direction]
+    moves = {"north": 0.1, "south": 0.20, "east": 0.3, "west": 0.4}
     return moves[direction]
