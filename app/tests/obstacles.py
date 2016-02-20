@@ -18,7 +18,7 @@ def run(data, direction):
     if direction == "east":
         head[0] += 1
 
-    if head[] >= data["height"] or head[1] < 0:
+    if head[1] >= data["height"] or head[1] < 0:
         return None
 
     if head[0] >= data["height"] or head[1] < 0:
