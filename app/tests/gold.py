@@ -41,7 +41,7 @@ def run(data, direction):
     #find the new gold coin from potential position
     new_closest_gold = data["gold"][gold.index(min(gold))]
 
-    print("old closest gold: " + closest gold)
+    print("old closest gold: " + closest_gold)
     print("new closest gold: " + new_closest_gold)
 
     if(new_closest_gold > closest_gold): return 0.5
