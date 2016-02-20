@@ -5,3 +5,6 @@ WEIGHT  = 1
 
 def run(data, direction):
     print data
+    head = [x for x in data["snakes"] if x["id"] == data["our-snake-id"]][0]
+    if head[]
+        
