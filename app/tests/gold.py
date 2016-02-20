@@ -5,7 +5,7 @@ WEIGHT  = 10
 def run(data, direction):
     # setup gold holder and my_head
     gold = []
-    my_head = [x for x in data["snakes"] if x["id"] == data["our-snake-id"]][0]["coords"][0]
+    my_head = [x for x in data["snakes"] if x["id"] == data[""]][0]["coords"][0]
 
     print(my_head)
     
