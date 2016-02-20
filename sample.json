@@ -1,23 +1,23 @@
-{  
+{
    "game":"mysterious-scolding",
-   "snakes":[  
-      {  
+   "snakes":[
+      {
          "kills":0,
          "status":"alive",
          "taunt":"",
          "id":"ee925ec8-01f4-4f08-a05d-617a97cad866",
          "message":"",
          "name":"Adder Lovelace",
-         "coords":[  
-            [  
+         "coords":[
+            [
                16,
                3
             ],
-            [  
+            [
                15,
                3
             ],
-            [  
+            [
                14,
                3
             ]
@@ -25,23 +25,23 @@
          "age":3,
          "health":97
       },
-      {  
+      {
          "kills":0,
          "status":"alive",
          "taunt":"Tauting alll the shit",
          "id":"9a6b2c23-9485-4d7b-b459-d0a8689e10d8",
          "message":"",
          "name":"Wubalubadubdub",
-         "coords":[  
-            [  
+         "coords":[
+            [
                16,
                13
             ],
-            [  
+            [
                15,
                13
             ],
-            [  
+            [
                14,
                13
             ]
@@ -50,12 +50,12 @@
          "health":97
       }
    ],
-   "food":[  
-      [  
+   "food":[
+      [
          8,
          8
       ],
-      [  
+      [
          1,
          1
       ]
@@ -63,5 +63,8 @@
    "height":17,
    "width":17,
    "mode":"classic",
-   "turn":3
+   "turn":3,
+   "walls": [
+     [16, 12]
+   ]
 }
