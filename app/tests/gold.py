@@ -3,8 +3,10 @@ WEIGHT  = 10
 # Returns a positive integer that will be multipled by weight and and the current score
 # Return None if you do not want the snake to go in this direction
 def run(data, direction):
-    # setup gold holder and my_head
+    # setup gold holder
     gold = []
+
+
     my_head = []
 
     for x in data["snakes"]:
@@ -36,20 +38,20 @@ def run(data, direction):
 
     print(my_head)
      
-    gold = []
+    new_gold = []
     #build an array of number of moves to get to gold coins at our new position
     for i in data["gold"]:
         x_moves = abs(my_head[0] - i[0])
         y_moves = abs(my_head[1] - i[1])
         moves = x_moves + y_moves
-        gold.append(moves)
+        new_gold.append(moves)
     
     #find the new gold coin from potential position
-    new_closest_gold = data["gold"][gold.index(min(gold))]
+    new_closest_gold = data["gold"][new_gold.index(min(new_gold))]
 
     #now we have the closest gold coords and the new closest gold coords
-
     num_moves_closest = abs(my_head[0] - closest_gold[0]) + abs(my_head[1] - closest_gold[1])
+
     num_moves_new_closest = abs(my_head[0] - new_closest_gold[0]) + abs(my_head[1] - new_closest_gold[1])
 
     print "old closest gold:", num_moves_closest
@@ -57,7 +59,3 @@ def run(data, direction):
 
     if(num_moves_new_closest > num_moves_closest): return 0.5
     if(num_moves_new_closest < num_moves_closest): return 1
-
-
-   
-    
