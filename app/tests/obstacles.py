@@ -41,7 +41,6 @@ def run(data, direction):
         bad_places += data["walls"]
 
     for place in bad_places:
-        print place
         if place[0] == head[0] and place[1] == head[1]:
             return None
     return 1
