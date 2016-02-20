@@ -3,6 +3,7 @@ from bottle import run
 import os
 import snake
 
+
 @bottle.route('/static/<path:path>')
 def static(path):
     return bottle.static_file(path, root='static/')
@@ -10,21 +11,15 @@ def static(path):
 
 @bottle.get('/')
 def index():
-    head_url = '%s://%s/static/head.png' % (
-        bottle.request.urlparts.scheme,
-        bottle.request.urlparts.netloc
-    )
-
     return {
-        'color': '#00ff00',
-        'head': head_url
+        'color': snake.color(),
+        'head': snake.head(bottle)
     }
 
 
 @bottle.post('/start')
 def start():
     data = bottle.request.json
-    # TODO: Do things with data
 
     return {
         'taunt': snake.taunt(data)
@@ -36,7 +31,6 @@ def move():
     data = bottle.request.json
 
     # TODO: Do things with data
-    print "shit"
 
     return {
         'move': snake.get_move(data),
