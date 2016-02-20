@@ -1,6 +1,7 @@
 import bottle
+from bottle import run
 import os
-
+import snake
 
 @bottle.route('/static/<path:path>')
 def static(path):
@@ -23,11 +24,10 @@ def index():
 @bottle.post('/start')
 def start():
     data = bottle.request.json
-
     # TODO: Do things with data
 
     return {
-        'taunt': 'battlesnake-python!'
+        'taunt': snake.taunt(data)
     }
 
 
@@ -36,10 +36,11 @@ def move():
     data = bottle.request.json
 
     # TODO: Do things with data
+    print "shit"
 
     return {
-        'move': 'north',
-        'taunt': 'battlesnake-python!'
+        'move': snake.get_move(data),
+        'taunt': snake.taunt(data)
     }
 
 
@@ -50,11 +51,12 @@ def end():
     # TODO: Do things with data
 
     return {
-        'taunt': 'battlesnake-python!'
+        'taunt': snake.taunt(data)
     }
 
 
 # Expose WSGI app (so gunicorn can find it)
 application = bottle.default_app()
 if __name__ == '__main__':
-    bottle.run(application, host=os.getenv('IP', '0.0.0.0'), port=os.getenv('PORT', '8080'))
+    bottle.run(application, host=os.getenv('IP', '0.0.0.0'), port=os.getenv('PORT', '8080'), reloader=True)
+
