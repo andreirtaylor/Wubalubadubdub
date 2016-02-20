@@ -52,8 +52,8 @@ def run(data, direction):
     num_moves_closest = abs(my_head[0] - closest_gold[0]) + abs(my_head[1] - closest_gold[1])
     num_moves_new_closest = abs(my_head[0] - new_closest_gold[0]) + abs(my_head[1] - new_closest_gold[1])
 
-    print("old closest gold: " + num_moves_closest)
-    print("new closest gold: " + num_moves_new_closest)
+    print "old closest gold:", num_moves_closest
+    print "new closest gold:", num_moves_new_closest
 
     if(num_moves_new_closest > num_moves_closest): return 0.5
     if(num_moves_new_closest < num_moves_closest): return 1
