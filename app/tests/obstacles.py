@@ -4,8 +4,8 @@ WEIGHT  = 1
 # Return None if you do not want the snake to go in this direction
 
 def run(data, direction):
-    head = [x for x in data["snakes"] if x["id"] == data["our-snake-id"]][0]["coords"][0]
-
+    head = [x for x in data["snakes"] if x["id"] == data["our-snake-id"]][0]["coords"][0][:]
+    real_head = head[:]
     if direction == "north":
         head[1] -= 1
 
@@ -18,9 +18,10 @@ def run(data, direction):
     if direction == "east":
         head[0] += 1
 
-    print "\n head " + direction
-    print head
-    print "\n"
+    #print "\n head " + direction
+    #print head
+    #print real_head
+    #print "\n"
 
     if head[1] >= data["height"] or head[1] < 0:
         return None
@@ -28,14 +29,19 @@ def run(data, direction):
     if head[0] >= data["width"] or head[0] < 0:
         return None
 
+    bad_places = []
     ## Dont hit your own body
-    print "dont hit your body"
-    for x in [x for x in data["snakes"] if x["id"] == data["our-snake-id"]][0]["coords"][1:]:
-        print x[0]
-        print head[0]
-        print x[1]
-        print head[1]
-        
-        if x[0] == head[0] and x[1] == head[1]:
+    bad_places += [x for x in data["snakes"] if x["id"] == data["our-snake-id"]][0]["coords"][1:]
+    ## Dont hit other snakes bodies
+    for snake in data["snakes"]:
+        ## Dont worry about the head
+        bad_places += snake["coords"][1:]
+    ## Dont hit a wall
+    if data.get("walls") != None:
+        bad_places += data["walls"]
+
+    for place in bad_places:
+        print place
+        if place[0] == head[0] and place[1] == head[1]:
             return None
     return 1
