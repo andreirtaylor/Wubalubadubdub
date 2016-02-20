@@ -4,7 +4,7 @@ WEIGHT  = 1
 # Return None if you do not want the snake to go in this direction
 
 def run(data, direction):
-    print data
+    #print "\n" + direction + "\n"
     head = [x for x in data["snakes"] if x["id"] == data["our-snake-id"]][0]["coords"][0]
     if direction == "north":
         head[1] -= 1
@@ -18,6 +18,12 @@ def run(data, direction):
     if direction == "east":
         head[0] += 1
 
-    print "\n head "
-    print head
-    print "\n"
+    if head[] >= data["height"] or head[1] < 0:
+        return None
+
+    if head[0] >= data["height"] or head[1] < 0:
+        return None
+
+    ##print "\n head " + direction
+    ##print head
+    ##print "\n"
