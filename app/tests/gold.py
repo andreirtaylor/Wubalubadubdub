@@ -19,15 +19,11 @@ def run(data, direction):
         x_moves = abs(my_head[0] - i[0])
         y_moves = abs(my_head[1] - i[1])
         moves = x_moves + y_moves
-        print "old gold location:", i
-        print "old num moves:", moves
         gold.append(moves)
 
 
     closest_gold = data["gold"][gold.index(min(gold))]
-    print "closest_gold:",closest_gold 
     num_moves_closest = abs(my_head[0] - closest_gold[0]) + abs(my_head[1] - closest_gold[1])
-    print "num moves for closest:", num_moves_closest
     
     #check which direction has been passed in and move our head
     if(direction == "north"):
@@ -40,15 +36,13 @@ def run(data, direction):
         my_head[0] -= 1
 
     print(my_head)
-     
+    
     new_gold = []
     #build an array of number of moves to get to gold coins at our new position
     for i in data["gold"]:
         x_moves = abs(my_head[0] - i[0])
         y_moves = abs(my_head[1] - i[1])
         moves = x_moves + y_moves
-        print "new gold location:", i
-        print "old num moves:", moves
         new_gold.append(moves)
     
     #find the new gold coin from potential position
@@ -58,7 +52,8 @@ def run(data, direction):
 
     num_moves_new_closest = abs(my_head[0] - new_closest_gold[0]) + abs(my_head[1] - new_closest_gold[1])
 
-    print "new closest gold:", num_moves_new_closest
+    print "original distance to closest gold:", num_moves_closest
+    print "new distance to closest gold:", num_moves_new_closest
 
-    if(num_moves_new_closest > num_moves_closest): return 0.5
+    if(num_moves_new_closest >= num_moves_closest): return 0
     if(num_moves_new_closest < num_moves_closest): return 1
