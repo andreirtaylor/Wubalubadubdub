@@ -17,6 +17,7 @@ def get_move(data):
             ## if the score is None then stop processing that direction
             ## and set the direction to zero as you do not want to go in that direction
             score = test.run(data, direction)
+            print score
             if not score:
                 moves[direction] = 0
                 break
