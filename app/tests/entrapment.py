@@ -1,5 +1,5 @@
 def run(data, direction):
-    head = head(data)
+    head = getHead(data)
     next_loc = move(direction, head)
     if not is_clear(next_loc):
         return None
@@ -27,7 +27,7 @@ def is_snake_body(data, loc):
             coords.append(coord)
     return loc in coords
 
-def head(data):
+def getHead(data):
     return [s for s in data["snakes"] if s["id"] == data["our-snake-id"]][0]["coords"][0]
 
 def move(direction, current):
