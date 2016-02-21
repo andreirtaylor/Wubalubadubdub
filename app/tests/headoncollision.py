@@ -47,6 +47,7 @@ def run(data, direction):
                 if (len(set(checkSquares).intersection(otherSnakeHeads)) > 0):
                     print("Their Size")
                     print(len(snake["coords"]))
+                    print(snake)
                     print("Our Size")
                     print(ourSize)
                     if len(snake["coords"]) >= ourSize:
