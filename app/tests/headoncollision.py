@@ -13,6 +13,7 @@ def run(data, direction):
             theirHead = snake["coords"][0]
             checkSquares = []
             if calculateMoves(ourHead, theirHead) == 2 and len(snake["coords"]) >= ourSize:
+                print("Direct is " + direction)
                 if direction is "north":
                     potentialHead = [ourHead[0], ourHead[1]-1]
                     checkSquares.append(tuple([potentialHead[0] - 1, potentialHead[1]])) #west
@@ -37,7 +38,7 @@ def run(data, direction):
                     #checkSquares.append([tuple(potentialHead[0] + 1, potentialHead[1])]) #east
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] - 1]))  #north
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] + 1]))  #south
-
+                print(checkSquares)
                 if (set(checkSquares).intersection(otherSnakeHeads) > 0):
                     return None
                 else:
