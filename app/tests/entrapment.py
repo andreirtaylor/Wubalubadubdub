@@ -28,7 +28,7 @@ def is_snake_body(data, loc):
     return loc in coords
 
 def head(data):
-    return [x for x in data["snakes"] if x["id"] == data["our-snake-id"]][0]["coords"][0]
+    return [s for s in data["snakes"] if s["id"] == data["our-snake-id"]][0]["coords"][0]
 
 def move(direction, current):
     move =  {
