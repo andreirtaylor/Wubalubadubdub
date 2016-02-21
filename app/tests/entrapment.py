@@ -6,8 +6,8 @@ WEIGHT  = 1
 def run(data, direction):
     head = [x for x in data["snakes"] if x["id"] == data["our-snake-id"]][0]["coords"][0][:]
     next_loc = move(direction, head)
-    if not is_clear(data, next_loc):
-        return None
+    # if not is_clear(data, next_loc):
+    #     return None
     if not left_or_right_clear(data, direction, next_loc):
         return None
     return 0.0
