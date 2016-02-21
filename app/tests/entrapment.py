@@ -7,11 +7,11 @@ def run(data, direction):
         return None
     return 0.0
 
-
-def west_or_east_clear(data, direction, loc):
-    if direction in ['north','south']:
+# prevent moving through a one space wide opening
+def left_or_right_clear(data, direction, loc):
+    if direction in ['north','south']: # if moving north/south, check east and west coords
         return is_clear(data, [loc[0]-1, loc[1]]) or is_clear(data, [loc[0]+1, loc[1]])
-    elif direction in ['west','east']:
+    elif direction in ['west','east']: # if moving east/west, check north and south coords
         return is_clear(data, [loc[0], loc[1]-1]) or is_clear(data, [loc[0], loc[1]+1])
     else:
         raise
