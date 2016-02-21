@@ -1,4 +1,4 @@
-WEIGHT  = 20
+WEIGHT  = 15
 
 # Returns a positive floating point between 0 and 1 that will be multipled by weight and and the current score
 # Return None if you do not want the snake to go in this direction
@@ -26,7 +26,7 @@ def run(data, direction):
             moves["north"] -=  moveRatio * attackRatio * yMove;
         elif len(snake["coords"]) == len(oursnake["coords"]):
             # We're the same! Bail!
-            bailRatio = 0.2
+            bailRatio = 0.1
             moves["east"]  +=  -1 * moveRatio * bailRatio * xMove;
             moves["west"]  -=  -1 * moveRatio *  bailRatio * xMove;
 
