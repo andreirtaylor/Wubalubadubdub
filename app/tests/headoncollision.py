@@ -8,7 +8,8 @@ def run(data, direction):
     ourHead = ourSnake["coords"][0][:]
     ourSize = len(ourSnake["coords"])
     otherSnakeHeads = [tuple(x["coords"][0]) for x in data["snakes"] if x["id"] != data["our-snake-id"]]
-    for snake in data["snakes"]:
+    otherSnakes = [x for x in data["snakes"] if x["id"] != data["our-snake-id"]]
+    for snake in otherSnakes:
         if snake["id"] is not data["our-snake-id"]:
             theirHead = snake["coords"][0]
             checkSquares = []
