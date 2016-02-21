@@ -39,6 +39,7 @@ def run(data, direction):
                     #checkSquares.append([tuple(potentialHead[0] + 1, potentialHead[1])]) #east
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] - 1]))  #north
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] + 1]))  #south
+                checkSquares.append(tuple(potentialHead))
                 print(potentialHead)
                 print(otherSnakeHeads)
                 print("Set Intersection")
