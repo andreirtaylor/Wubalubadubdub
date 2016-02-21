@@ -12,7 +12,7 @@ def run(data, direction):
         if snake["id"] is not data["our-snake-id"]:
             theirHead = snake["coords"][0]
             checkSquares = []
-            if calculateMoves(ourHead, theirHead) == 2 and len(snake["coords"]) >= ourSize:
+            if calculateMoves(ourHead, theirHead) <= 2 and len(snake["coords"]) >= ourSize:
                 print("Direct is " + direction)
                 if direction is "north":
                     potentialHead = [ourHead[0], ourHead[1]-1]
