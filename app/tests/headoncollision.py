@@ -43,7 +43,7 @@ def run(data, direction):
                 print("Set Intersection")
                 print(checkSquares)
                 print(set(checkSquares).intersection(otherSnakeHeads))
-                if (set(checkSquares).intersection(otherSnakeHeads) > 0):
+                if (len(set(checkSquares).intersection(otherSnakeHeads)) > 0):
                     return None
                 else:
                     return 1    
