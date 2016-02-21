@@ -10,7 +10,7 @@ def run(data, direction):
     for snake in data["snakes"]:
         if snake["id"] is not data["our-snake-id"]:
             theirHead = snake["coords"][0]
-            if calculateMoves(ourHead, theirHead) == 2 and len(snake) >= ourSize:
+            if calculateMoves(ourHead, theirHead) == 2 and len(snake["coords"]) >= ourSize:
                 return None
     		#When were at a crossroads, check the size of the snake.
     return 1
