@@ -15,4 +15,4 @@ def run(data, direction):
     return 1
 
 def calculateMoves(head,point,height,width):
-    return abs(head[0] - point[0]) + abs(head[1] - point[1]) 
+    return abs(head[0] - point[0]) + abs(head[1] - point[1])
