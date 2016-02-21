@@ -6,9 +6,11 @@ import tests
 # tests.print_tests()
 
 def get_move(data):
-    moves = {key: 1 for key in ["north", "south", "east", "west"]}
-    for direction in moves:
-        for test in tests.get():
+    directions = ["north", "south", "east", "west"]
+    moves = {key: 1 for key in directions}
+    for test in tests.get():
+        testMoves = {}
+        for direction in directions:
             ## The test.run score is either a positive floating point number
             ## between 0 and 1 or None
             ## If the score is a number it is added to the
@@ -16,14 +18,12 @@ def get_move(data):
 
             ## if the score is None then stop processing that direction
             ## and set the direction to zero as you do not want to go in that direction
-            score = test.run(data, direction)
-            print score
-            if not score:
-                moves[direction] = 0
-                break
-            moves[direction] += test.WEIGHT * score
-    print moves
-    print "direction = " + max(moves, key=moves.get)
+            if moves[direction] == 0: continue
+            testMoves[direction] = test.run(data, direction)
+            if testMoves[direction] == None: moves[direction] = 0
+            else: moves[direction] += test.WEIGHT * float(testMoves[direction])
+        print "{0} ({1}): {2}".format(os.path.basename(test.__file__), test.WEIGHT, testMoves)
+    print "Total: {0}".format(moves)
     return max(moves, key=moves.get)
 
 def taunt(data):

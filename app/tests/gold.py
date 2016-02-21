@@ -15,7 +15,6 @@ def run(data, direction):
         if x["id"] == "9a6b2c23-9485-4d7b-b459-d0a8689e10d8":
             my_head = x["coords"][0][:]
 
-    print(my_head)
     
     #find current closest based on number of moves
     for i in data["gold"]:
@@ -38,7 +37,6 @@ def run(data, direction):
     if(direction == "west"):
         my_head[0] -= 1
 
-    print(my_head)
     
     new_gold = []
     #build an array of number of moves to get to gold coins at our new position
@@ -55,11 +53,11 @@ def run(data, direction):
 
     num_moves_new_closest = abs(my_head[0] - new_closest_gold[0]) + abs(my_head[1] - new_closest_gold[1])
 
-    print "original distance to closest gold:", num_moves_closest
-    print "new distance to closest gold:", num_moves_new_closest
-
-    if(num_moves_new_closest >= num_moves_closest): 
-        print "bad"
-        return 0
-    print "good"
+    # print "original distance to closest gold:", num_moves_closest
+    # print "new distance to closest gold:", num_moves_new_closest
+    #
+    # if(num_moves_new_closest >= num_moves_closest):
+    #     print "bad"
+    #     return 0
+    # print "good"
     return 10
