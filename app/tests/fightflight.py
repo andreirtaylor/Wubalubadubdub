@@ -34,7 +34,7 @@ def run(data, direction):
             moves["north"] -=  -1 * moveRatio *  bailRatio * yMove;
         elif len(snake["coords"]) > len(oursnake["coords"]):
             # We're smaller! Run!
-            runRatio = 0.5
+            runRatio = 0.3
             moves["east"]  +=  -1 * moveRatio * runRatio * xMove;
             moves["west"]  -=  -1 * moveRatio *  runRatio * xMove;
 
