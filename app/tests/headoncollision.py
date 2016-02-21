@@ -1,6 +1,8 @@
 # Returns a positive floating point between 0 and 1 that will be multipled by weight and and the current score
 # Return None if you do not want the snake to go in this direction
-WEIGHT = 100
+WEIGHT = 1
+
+#Current algorithm is very conservative, and does not challenge snakes it knows it can be.
 
 def run(data, direction):
 	#In the event we will run into a snake head to head, return None if the Snake is larger or equal to us. Return 0 if smaller.
@@ -40,11 +42,6 @@ def run(data, direction):
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] - 1]))  #north
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] + 1]))  #south
                 checkSquares.append(tuple(potentialHead))
-                print(potentialHead)
-                print(otherSnakeHeads)
-                print("Set Intersection")
-                print(checkSquares)
-                print(set(checkSquares).intersection(otherSnakeHeads))
                 if (len(set(checkSquares).intersection(otherSnakeHeads)) > 0):
                     return None
                 else:
