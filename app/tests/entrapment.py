@@ -9,9 +9,9 @@ def run(data, direction):
 
 
 def left_or_right_clear(data, direction, loc):
-    if direction in ['up','down']:
+    if direction in ['north','south']:
         return is_clear(data, [loc[0]-1, loc[1]]) or is_clear(data, [loc[0]+1, loc[1]])
-    elif direction in ['left','right']:
+    elif direction in ['east','west']:
         return is_clear(data, [loc[0], loc[1]-1]) or is_clear(data, [loc[0], loc[1]+1])
     else:
         raise
@@ -32,10 +32,10 @@ def getHead(data):
 
 def move(direction, current):
     move =  {
-                'up': [current[0], current[1] - 1],
-                'down': [current[0], current[1] + 1],
-                'left': [current[0] - 1, current[1]],
-                'right': [current[0] + 1, current[1]]
+                'north': [current[0], current[1] - 1],
+                'south': [current[0], current[1] + 1],
+                'east': [current[0] - 1, current[1]],
+                'west': [current[0] + 1, current[1]]
             }
     return move[direction]
 
