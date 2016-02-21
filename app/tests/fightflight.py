@@ -3,7 +3,7 @@ WEIGHT  = 15
 # Returns a positive floating point between 0 and 1 that will be multipled by weight and and the current score
 # Return None if you do not want the snake to go in this direction
 def run(data, direction):
-    moves = {"north": 0, "south": 0, "east": 0, "west": 0}
+    moves = {"north": 0.5, "south": 0.5, "east": 0.5, "west": 0.5}
 
     oursnake = [s for s in data["snakes"] if s["id"] == data["our-snake-id"]][0]
     othersnakes = [s for s in data["snakes"] if s["id"] != data["our-snake-id"]]
@@ -45,4 +45,5 @@ def run(data, direction):
     return moves[direction] if moves[direction] > 0 else 0
 
 
-
+if __name__ == '__main__':
+    print run({"width": 17, "height":17, "food":[[2,1]],"snakes": [{"id":"9a6b2c23-9485-4d7b-b459-d0a8689e10d8","coords":[[3,1]]}], "our-snake-id":"9a6b2c23-9485-4d7b-b459-d0a8689e10d8"},"west")  
