@@ -16,19 +16,19 @@ def run(data, direction):
                 if direction is "north":
                     potentialHead = [ourHead[0], ourHead[1]-1]
                     checkSquares.append(tuple([potentialHead[0] - 1, potentialHead[1]])) #west
-                    checkSquares.append([tuple(potentialHead[0] + 1, potentialHead[1])]) #east
+                    checkSquares.append(tuple([potentialHead[0] + 1, potentialHead[1]])) #east
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] - 1]))  #north
                     #checkSquares.append(tuple([potentialHead[0], potentialHead[1] + 1]))  #south
                 elif direction is "east":
                     potentialHead = [ourHead[0] + 1, ourHead[1]]
                     #checkSquares.append(tuple([potentialHead[0] - 1, potentialHead[1]])) #west
-                    checkSquares.append([tuple(potentialHead[0] + 1, potentialHead[1])]) #east
+                    checkSquares.append(tuple([potentialHead[0] + 1, potentialHead[1]])) #east
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] - 1]))  #north
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] + 1]))  #south
                 elif direction is "south":
                     potentialHead = [ourHead[0], ourHead[1] + 1]
                     checkSquares.append(tuple([potentialHead[0] - 1, potentialHead[1]])) #west
-                    checkSquares.append([tuple(potentialHead[0] + 1, potentialHead[1])]) #east
+                    checkSquares.append(tuple([potentialHead[0] + 1, potentialHead[1]])) #east
                     #checkSquares.append(tuple([potentialHead[0], potentialHead[1] - 1]))  #north
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] + 1]))  #south
                 else:
