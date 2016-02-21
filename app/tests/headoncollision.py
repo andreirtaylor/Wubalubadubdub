@@ -40,6 +40,7 @@ def run(data, direction):
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] - 1]))  #north
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] + 1]))  #south
                 print(potentialHead)
+                print(otherSnakeHeads)
                 print(checkSquares)
                 if (set(checkSquares).intersection(otherSnakeHeads) > 0):
                     return None
