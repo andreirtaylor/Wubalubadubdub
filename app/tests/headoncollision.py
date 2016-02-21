@@ -41,7 +41,7 @@ def run(data, direction):
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] - 1]))  #north
                     checkSquares.append(tuple([potentialHead[0], potentialHead[1] + 1]))  #south
                 checkSquares.append(tuple(potentialHead))
-                if (len(set(checkSquares).intersection(otherSnakeHeads)) > 0):
+                if (len(set(checkSquares).intersection(otherSnakeHeads)) > 0 and len(snake["coords"]) >= ourSize):
                     return None
                 else:
                     return 1    
