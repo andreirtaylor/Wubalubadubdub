@@ -3,7 +3,7 @@ def run(data, direction):
     next_loc = move(direction, head)
     if not is_clear(data, next_loc):
         return None
-    if not west_or_east_clear(data, direction, next_loc):
+    if not left_or_right_clear(data, direction, next_loc):
         return None
     return 0.0
 
