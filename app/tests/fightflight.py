@@ -1,4 +1,4 @@
-WEIGHT  = 15
+WEIGHT  = 20
 
 # Returns a positive floating point between 0 and 1 that will be multipled by weight and and the current score
 # Return None if you do not want the snake to go in this direction
