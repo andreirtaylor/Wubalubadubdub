@@ -12,7 +12,6 @@ def run(data, direction):
         if snake["id"] is not data["our-snake-id"]:
             theirHead = snake["coords"][0]
             checkSquares = []
-            print("Processing Snake")
             if calculateMoves(ourHead, theirHead) == 2 and len(snake["coords"]) >= ourSize:
                 print("Direct is " + direction)
                 if direction is "north":
@@ -42,6 +41,7 @@ def run(data, direction):
                 print(potentialHead)
                 print(otherSnakeHeads)
                 print(checkSquares)
+                print(set(checkSquares).intersection(otherSnakeHeads))
                 if (set(checkSquares).intersection(otherSnakeHeads) > 0):
                     return None
                 else:
