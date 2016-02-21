@@ -22,7 +22,10 @@ def left_or_right_clear(data, direction, loc):
         raise
 
 def is_clear(data, loc):
-    return loc not in data['walls'] and not is_snake_body(data, loc)
+    if data.get("walls") != None:
+        return loc not in data['walls'] and not is_snake_body(data, loc)
+    else:
+        return True
 
 def is_snake_body(data, loc):
     snake_bodies = [snake["coords"][1:] for snake in data["snakes"]]
