@@ -8,7 +8,9 @@ def run(data, direction):
     head = [x for x in data["snakes"] if x["id"] == data["our-snake-id"]][0]["coords"][0]
     myWeight = 0
     numFood = 0
-    for food in data["food"]:
+    if "gold" in data: things = data["food"] + data["gold"]
+    else: things = data["food"]
+    for food in things:
         if foodInDirectionOfHead(head,food,direction):
             numFood += 1
             myWeight += 1/float(calculateMoves(head,food, data["height"],data["width"]))
