@@ -46,5 +46,6 @@ def head(bottle):
     )
 
 def color():
-    r = lambda: _random.randint(0,255)
-    return '#%02X%02X%02X' % (r(),r(),r())
+    return "#F9FD72"
+    # r = lambda: _random.randint(0,255)
+    # return '#%02X%02X%02X' % (r(),r(),r())
